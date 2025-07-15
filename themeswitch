@@ -1,0 +1,7 @@
+cp /home/max/.configbackups/$1.gsettings /home/max/.local/share/nwg-look/gsettings &&
+cp -r /home/max/.configbackups/$1/* /home/max/.config &&
+echo "@theme '/usr/share/rofi/themes/${1}.rasi'" > /home/max/.config/rofi/config.rasi &&
+/home/max/Pictures/Wallpapers/wallpaper.sh -$1 &&
+nwg-look -a
+killall waybar 
+waybar & disown
